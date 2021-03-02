@@ -223,3 +223,48 @@ DATA 1A.
 
 # 6-7
 
+    #include <stdio.h>
+    #include <string.h>
+
+
+    //PROGRAMM MAKE APPOINTMENTS FOR TODAY AND PUT IT IN ORDER FROM 1 TO 10
+    int main(void) {
+    int i=1;
+    int c;
+    char AP[i], WW[i];
+    char line[100]; 
+
+    printf("DOCTOR : D\n"); 
+    printf("SCHOOL : S\n"); 
+    printf("JOB    : J\n"); 
+    printf("TASKS  : T\n"); 
+    printf("FAMILY : F\n");  
+    printf("0 - 10 WHERE 10 IS HIGH IMPORTANCE LEVEL");
+    printf("\n\nIF THERE IS NO MORE DATES, ENTER ""0""\n\n");
+      while(1)
+      {
+
+      printf("\nAPPOINTMENT\n");
+      fgets(line, sizeof(line), stdin);
+      sscanf(line, "%s", &AP[i]);
+
+      printf("\nLEVEL OF IMPORTANCE\n");
+      fgets(line, sizeof(line), stdin);
+      sscanf(line, "%s", &WW[i]);
+
+      if(AP[i]=='0')
+      break;
+      if(AP[i]!='0')
+      {
+      i=i+1;
+      continue;
+      }
+
+      }
+      for(c=1;c<=i;c++)
+    {
+
+      printf("%c   %c\n", AP[c], WW[c]);
+    }
+      return 0;
+    }
